@@ -23,11 +23,11 @@ public class move : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                this.transform.Translate(Vector3.up * 速度 * Time.deltaTime);
+                this.transform.Translate(Vector3.back * 速度 * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.DownArrow))
             {
-                this.transform.Translate(Vector3.down * 速度 * Time.deltaTime);
+                this.transform.Translate(Vector3.forward * 速度 * Time.deltaTime);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
