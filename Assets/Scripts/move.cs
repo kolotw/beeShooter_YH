@@ -10,6 +10,8 @@ public class move : MonoBehaviour
     public GameObject 子彈;
     public Transform 發射點A;
     public Transform 發射點B;
+    public int 血量 = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +46,7 @@ public class move : MonoBehaviour
             this.transform.position = 位置.transform.position;
         }
         // fire bullet
-        if (Input.GetKeyUp(KeyCode.Mouse0)) 
+        if (Input.GetKey(KeyCode.Mouse0)) 
         {
             //Instantiate(遊戲物件, 發射點position, 旋轉角度);
             GameObject bb = Instantiate(子彈, 發射點A.position, Quaternion.identity);
@@ -53,4 +55,19 @@ public class move : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "敵方子彈")
+        {
+            Destroy(other.gameObject);
+            血量--;
+            if(血量 <= 0)
+            {
+                Destroy(this.gameObject);
+                print("死掉了");
+            }
+        }
+    }
+
 }
