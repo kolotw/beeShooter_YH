@@ -21,9 +21,9 @@ public class 敵人的行為 : MonoBehaviour
     {
         初始位置 = transform.position;
         血量 = Random.Range(1, 10);
-
-        InvokeRepeating("發射子彈", 3f, 1f);
-     //InvokeRepeating(函式名要雙引號, 第一次調後, 每幾調用);
+        float 發射頻率 = Random.Range(0.3f, 3);
+        InvokeRepeating("發射子彈", 3f, 發射頻率);
+      //InvokeRepeating(函式名要雙引號, 第一次調後, 每幾秒調用);
     }
 
     // Update is called once per frame
