@@ -21,6 +21,23 @@ public class move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Raycast
+        if (Input.GetMouseButton(0))
+        {
+            // 從攝像機位置發射 Ray
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Vector3 nPos = Vector3.zero;             
+            if (Physics.Raycast(ray, out hit)) // 如果 Raycast 撞擊到物件
+            {                
+                // 取得被撞擊到的物件
+                nPos = hit.point;
+                nPos.z = 0;
+                nPos.y = hit.point.y + 1.5f;
+                this.transform.position = nPos;
+            }
+        }
+
         // movement method
         {
             if (Input.GetKey(KeyCode.UpArrow))

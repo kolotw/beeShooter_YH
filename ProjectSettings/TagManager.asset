@@ -6,14 +6,15 @@ TagManager:
   tags:
   - "\u6211\u65B9\u5B50\u5F48"
   - "\u6575\u65B9\u5B50\u5F48"
+  - "\u6575\u4EBA"
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - "\u6575\u4EBA\u78B0\u649E"
   - Water
   - UI
-  - 
+  - "\u9810\u9632\u78B0\u649E"
   - 
   - 
   - 
